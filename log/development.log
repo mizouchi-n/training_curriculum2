@@ -1,0 +1,272 @@
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE DATABASE `training_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE `training_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT @@innodb_file_per_table = 1 AND @@innodb_file_format = 'Barracuda'[0m
+  [1m[35m (87.2ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) COLLATE utf8_general_ci NOT NULL PRIMARY KEY)[0m
+  [1m[35m (36.7ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) COLLATE utf8_general_ci NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT GET_LOCK('3470622141901363785', 0)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreatePlans (20200414072724)
+  [1m[35m (37.6ms)[0m  [1m[35mCREATE TABLE `plans` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `plan` varchar(255), `date` date, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (26.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (3.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200414072724')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (25.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.0ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2020-10-02 08:05:52.348356', '2020-10-02 08:05:52.348356')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('3470622141901363785')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for ::1 at 2020-10-02 17:06:37 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (1.3ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2020-10-02' AND '2020-10-08'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `map'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 24.8ms | Allocations: 5796)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/mizouchinatsuki/projects/training_curriculum/public/packs
+[Webpacker] Hash: 15d1bb7b54cf6326b9ba
+Version: webpack 4.44.2
+Time: 1703ms
+Built at: 2020/10/02 17:06:41
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-9afcbb5693aa87623e69.js    124 KiB  application  [emitted] [immutable]  application
+js/application-9afcbb5693aa87623e69.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-9afcbb5693aa87623e69.js js/application-9afcbb5693aa87623e69.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 3568ms (Views: 3539.7ms | ActiveRecord: 6.1ms | Allocations: 33499)
+
+
+Started GET "/" for ::1 at 2020-10-03 00:26:03 +0900
+  [1m[35m (1.1ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  
+SyntaxError (/Users/mizouchinatsuki/projects/training_curriculum/app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting =>
+      days = { month : (@todays_date + x).month, da...
+                     ^
+/Users/mizouchinatsuki/projects/training_curriculum/app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+...@todays_date + x).month, date : (@todays_date+x).day, plans ...
+...                              ^
+/Users/mizouchinatsuki/projects/training_curriculum/app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+...: (@todays_date+x).day, plans : today_plans}
+...                              ^
+/Users/mizouchinatsuki/projects/training_curriculum/app/controllers/calendars_controller.rb:42: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting =>
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+app/controllers/calendars_controller.rb:42: syntax error, unexpected end, expecting end-of-input
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting =>
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+app/controllers/calendars_controller.rb:42: syntax error, unexpected end, expecting end-of-input
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting =>
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+app/controllers/calendars_controller.rb:42: syntax error, unexpected end, expecting end-of-input
+Started GET "/" for ::1 at 2020-10-03 00:26:29 +0900
+  
+SyntaxError (/Users/mizouchinatsuki/projects/training_curriculum/app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting =>
+      days = { month : (@todays_date + x).month, da...
+                     ^
+/Users/mizouchinatsuki/projects/training_curriculum/app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+...@todays_date + x).month, date : (@todays_date+x).day, plans ...
+...                              ^
+/Users/mizouchinatsuki/projects/training_curriculum/app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+...: (@todays_date+x).day, plans : today_plans}
+...                              ^
+/Users/mizouchinatsuki/projects/training_curriculum/app/controllers/calendars_controller.rb:42: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting =>
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+app/controllers/calendars_controller.rb:42: syntax error, unexpected end, expecting end-of-input
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting =>
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+app/controllers/calendars_controller.rb:42: syntax error, unexpected end, expecting end-of-input
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting =>
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+app/controllers/calendars_controller.rb:42: syntax error, unexpected end, expecting end-of-input
+Started GET "/" for ::1 at 2020-10-03 00:26:30 +0900
+  
+SyntaxError (/Users/mizouchinatsuki/projects/training_curriculum/app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting =>
+      days = { month : (@todays_date + x).month, da...
+                     ^
+/Users/mizouchinatsuki/projects/training_curriculum/app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+...@todays_date + x).month, date : (@todays_date+x).day, plans ...
+...                              ^
+/Users/mizouchinatsuki/projects/training_curriculum/app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+...: (@todays_date+x).day, plans : today_plans}
+...                              ^
+/Users/mizouchinatsuki/projects/training_curriculum/app/controllers/calendars_controller.rb:42: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting =>
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+app/controllers/calendars_controller.rb:42: syntax error, unexpected end, expecting end-of-input
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting =>
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+app/controllers/calendars_controller.rb:42: syntax error, unexpected end, expecting end-of-input
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting =>
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+app/controllers/calendars_controller.rb:42: syntax error, unexpected end, expecting end-of-input
+Started GET "/" for ::1 at 2020-10-03 00:26:39 +0900
+  
+SyntaxError (/Users/mizouchinatsuki/projects/training_curriculum/app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting =>
+      days = { month : (@todays_date + x).month, da...
+                     ^
+/Users/mizouchinatsuki/projects/training_curriculum/app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+...@todays_date + x).month, date : (@todays_date+x).day, plans ...
+...                              ^
+/Users/mizouchinatsuki/projects/training_curriculum/app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+...: (@todays_date+x).day, plans : today_plans}
+...                              ^
+/Users/mizouchinatsuki/projects/training_curriculum/app/controllers/calendars_controller.rb:42: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting =>
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+app/controllers/calendars_controller.rb:42: syntax error, unexpected end, expecting end-of-input
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting =>
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+app/controllers/calendars_controller.rb:42: syntax error, unexpected end, expecting end-of-input
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting =>
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+app/controllers/calendars_controller.rb:37: syntax error, unexpected ':', expecting '='
+app/controllers/calendars_controller.rb:42: syntax error, unexpected end, expecting end-of-input
+Started GET "/" for ::1 at 2020-10-03 00:29:08 +0900
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (0.5ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2020-10-03' AND '2020-10-09'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `map'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1120)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 18.4ms | ActiveRecord: 8.0ms | Allocations: 10820)
+
+
+Started GET "/" for ::1 at 2020-10-03 00:31:50 +0900
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (0.4ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2020-10-03' AND '2020-10-09'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `map'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 709)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 15.6ms | ActiveRecord: 6.9ms | Allocations: 9175)
+
+
+Started GET "/" for ::1 at 2020-10-03 00:31:52 +0900
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (0.4ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2020-10-03' AND '2020-10-09'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `map'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 638)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 8.8ms | ActiveRecord: 0.4ms | Allocations: 5506)
+
+
+Started GET "/" for ::1 at 2020-10-03 00:31:57 +0900
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (0.5ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2020-10-03' AND '2020-10-09'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `map'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 638)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 19.7ms | ActiveRecord: 0.5ms | Allocations: 5516)
+
+
+Started GET "/" for ::1 at 2020-10-03 00:31:58 +0900
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (0.5ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2020-10-03' AND '2020-10-09'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `map'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 638)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 9.3ms | ActiveRecord: 0.5ms | Allocations: 5516)
+
+
+Started GET "/" for ::1 at 2020-10-03 00:32:04 +0900
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (0.6ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2020-10-03' AND '2020-10-09'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `map'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 638)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 9.1ms | ActiveRecord: 0.6ms | Allocations: 5516)
+
+
+Started GET "/" for ::1 at 2020-10-03 00:32:24 +0900
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (0.5ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2020-10-03' AND '2020-10-09'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `map'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 638)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.5ms | Allocations: 5510)
+
+
+Started GET "/" for ::1 at 2020-10-03 00:38:11 +0900
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (0.6ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2020-10-03' AND '2020-10-09'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `map'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1046)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 27.2ms | ActiveRecord: 0.6ms | Allocations: 6851)
+
+
+Started GET "/" for ::1 at 2020-10-03 00:38:13 +0900
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (0.5ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2020-10-03' AND '2020-10-09'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `map'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 643)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 17.2ms | ActiveRecord: 0.5ms | Allocations: 5514)
+
+
+Started GET "/" for ::1 at 2020-10-03 00:38:50 +0900
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (0.4ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2020-10-03' AND '2020-10-09'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `map'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1039)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 11.3ms | ActiveRecord: 0.4ms | Allocations: 6856)
+
+
+Started GET "/" for ::1 at 2020-10-03 00:39:52 +0900
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (0.5ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2020-10-03' AND '2020-10-09'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `map'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1038)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 11.3ms | ActiveRecord: 0.5ms | Allocations: 6823)
+
+
+Started GET "/" for ::1 at 2020-10-03 00:39:53 +0900
+Processing by CalendarsController#index as HTML
+  [1m[36mPlan Load (0.4ms)[0m  [1m[34mSELECT `plans`.* FROM `plans` WHERE `plans`.`date` BETWEEN '2020-10-03' AND '2020-10-09'[0m
+  ↳ app/controllers/calendars_controller.rb:34:in `map'
+  Rendering calendars/index.html.erb within layouts/application
+  Rendered calendars/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 643)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 0.4ms | Allocations: 5520)
+
+
